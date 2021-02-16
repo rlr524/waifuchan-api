@@ -1,4 +1,5 @@
 const express = require("express");
+const cors = require("cors");
 const bodyParser = require("body-parser");
 require("./initDB")();
 const mongoose = require("mongoose");
@@ -7,6 +8,7 @@ const Schema = mongoose.Schema;
 
 const app = express();
 
+app.use(cors());
 app.use(bodyParser.urlencoded({ extended: true }));
 
 const waifuSchemaShort = new Schema({
