@@ -17,6 +17,9 @@ func (app *application) routes() *gin.Engine {
 
 	r.GET("/v1/healthcheck", app.healthcheckHandler)
 
+	r.GET("/v1/waifus", app.showWaifusHandler)
+	r.GET("/v1/waifus/:id", app.showWaifuHandler)
+
 	return r
 }
 
